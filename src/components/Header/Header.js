@@ -9,15 +9,14 @@ const Header = ({ todos, onDeleteTodos }) => {
     todos.forEach(elem=>{
       if (!elem.done) newTodos.push(elem);
     })
-      onDeleteTodos(newTodos);
+    onDeleteTodos(newTodos);
   };
   
   return (
-
-    <nav className=" navbar bg-light d-flex align-items-center">
-      <p> TODO list </p>
+    <nav className="navbar bg-light d-flex">
+      <p className="align-self-center"> TODO list </p>
       <button
-        type="button" className="btn" onClick={() => {deleteTodos(); }}  >
+        type="button" className="btn align-self-center" onClick={() => {deleteTodos()}}  >
         <span className="material-icons md-24">
           delete
         </span>

@@ -1,5 +1,5 @@
 .app-todo {
-  max-width: 500px;
+  max-width: 450px;
   margin: 0 auto;
   font-family: "Arial";
   font-size: 15px;
@@ -13,6 +13,24 @@
   font-style: italic;
 }
 
-.material-icons{
-  color:black;
+.btn.focus, .btn:focus {
+  outline: 0;
+  box-shadow: 0 0 0 0;
 }
+
+.btn.disabled, .btn:disabled {
+  opacity: 1;
+}
+
+.form-control:focus {
+  color: #495057;
+  background-color: #fff;
+  border-color: #ced4da;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(148, 148, 148, 0.25);
+}
+
+.navbar{
+  height: 50px;
+}
+

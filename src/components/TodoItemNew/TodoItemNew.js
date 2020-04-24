@@ -4,55 +4,46 @@ import { onChangeAdd, onAddTodo } from "../../actions";
 
 const TodoItemNew = ({ label, onChangeAdd, onAddTodo, todos }) => {
   const trimLabel = label.trim();
-  let lengthError = ''
-
-  let onLengthCheck = (e) => {
-    e.preventDefault();
-    if (label.length <3) alert('Длина должна быть более 3х символов');
-    else onAddTodo(newTodos);
-  }
 
   let isDisabled = true;
   if (trimLabel) {
     isDisabled = false;
   }
 
+  let onAdd = (e) => {
+    e.preventDefault();
+    if (!lengthError()) onAddTodo(newTodos);
+    else alert("Длина должна быть более 3x символов!")
+  }
+ 
+  let lengthError = () => {
+    if (label.length <3) return true;    
+    else return false;
+  }
+
   const newTodos = [...todos, { label, done: false }];
 
   return (
-    <div className='container'>
-      <form className="d-flex row">
-      <div className='col-1'>
-          <button type="submit" name="submit"className="btn bnt-link"
-            onClick={onLengthCheck}
-            disabled={isDisabled} >
-            <i className="material-icons md-24">
-              add
-            </i>
-          </button>
-      </div>
+    <div>
+      <form className="row">
+        <div className='col-1 ml-2'>
+            <button type="submit" name="submit"className="btn bnt-link"
+              onClick={onAdd} disabled={isDisabled} >
+              <i className="material-icons md-36">
+                add
+              </i>
+            </button>
+        </div>
 
-      <div className='col-10'>
-        <input type="text" className="form-control ml-2" 
-        onChange={onChangeAdd} value={label}></input>
-      </div>
+        <div className='col-10'>
+          <input type="text" className="form-control ml-2" 
+          onChange={onChangeAdd} value={label}></input>
+        </div>
       </form>
-      <div>
-        {lengthError}
-        <Error lengthError={lengthError}></Error>
-      </div>
     </div>
   );
 };
 
-const Error = ({lengthError}) => {
-  return(
-    <div>
-      {lengthError}
-    </div>
-
-  )
-}
 
 const mapStateToProps = ({ todos, addTodoLabel }) => {
   return {
