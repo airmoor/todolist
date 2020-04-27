@@ -8,10 +8,10 @@
     "dev": "webpack-dev-server --mode development --open --hot --progress --colors --config ./webpack.config.js",
     "start": "webpack --mode production",
     "predeploy": "npm run start",
-    "deploy": "gh-pages -d bundle"
+    "deploy": "gh-pages -d dist"
   },
   "author": "airmoor",
-  "homepage": "https://airmoor.github.io/todolist/",
+  "homepage": "https://airmoor.github.io/todolist",
   "license": "ISC",
   "dependencies": {
     "bootstrap": "^4.4.1",
@@ -37,5 +37,4 @@
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.10.3"
   }
-
 }
