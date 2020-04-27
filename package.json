@@ -7,8 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack-dev-server --mode development --open --hot --progress --colors --config ./webpack.config.js",
     "start": "webpack --mode production",
-    "predeploy": "npm run start",
-    "deploy": "gh-pages -d dist"
+    "deploy": "npm run start && gh-pages -d dist"
   },
   "author": "airmoor",
   "homepage": "https://airmoor.github.io/todolist",
