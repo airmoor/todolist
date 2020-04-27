@@ -13,8 +13,6 @@ const onDeleteTodos = (newTodos) => {
 };
 
 const onAddTodo = (newTodos) => {
-
-
   return {
     type: "ON_ADD_TODO",
     payload: newTodos,

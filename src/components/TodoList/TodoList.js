@@ -4,7 +4,7 @@ import TodoItem from "../TodoItem";
 import { onToggleStatus } from "../../actions";
 
 
-const TodoList = ({  todos,  onToggleStatus}) => {
+const TodoList = ({ todos, onToggleStatus }) => {
 
   const changeTodoStatus = (newItem) => {
     const idx = todos.findIndex((todo) => todo.label === newItem.label);

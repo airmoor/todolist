@@ -31,7 +31,7 @@ const mapDispatchToProps = {
 
 const mapStateToProps = ({ todos }) => {
   return {
-    todos,
+    todos
   };
 };
 

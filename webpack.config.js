@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
   entry: "./src/index.js",
   output: { 
-    path: path.resolve(__dirname, '.', 'public'),
+    path: path.resolve(__dirname, '.', 'bundle'),
     filename: 'bundle.js',
     publicPath: '/'
   },
@@ -16,10 +16,10 @@ module.exports = {
         use: 'babel-loader' 
       },
       {
-      test: /\.css$/,
-      use: ['style-loader',
-      'css-loader'
-      ]
+        test: /\.css$/,
+        use: ['style-loader',
+        'css-loader'
+        ]
       }
     ]
   },
@@ -35,7 +35,7 @@ module.exports = {
     })
   ],
   devServer: {
-    contentBase: "./public",
+    contentBase: "./bundle",
     hot: true,
     port:3000
   }
