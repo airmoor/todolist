@@ -1,7 +1,7 @@
 # todolist
 React &amp; redux todo app
-
-#### demo at 109.248.36.36
+ 
+#### demo at 109.248.36.36 and https://todolist-fecb8.web.app/
 
 #### used
 * react
